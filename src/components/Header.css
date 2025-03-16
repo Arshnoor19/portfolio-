@@ -1,16 +1,4 @@
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav-list {
-    flex-direction: column;
-  }
-  .nav-list li {
-    margin: 10px 0;
-  }
-}
-
+/* Header Styles */
 .header {
   font-family: "Open Sans", sans-serif;
   font-weight: bolder;
@@ -29,6 +17,19 @@
   color: #fff; /* Darker text color for the logo */
 }
 
+/* Hamburger Icon */
+.hamburger {
+  display: none; /* Hide by default */
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Navigation Menu */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list {
   display: flex;
   list-style: none;
@@ -42,6 +43,9 @@
 }
 
 .nav-list a {
+  margin-top: 10px; /* Adjust as needed */
+  border: 2px solid black;
+  border-radius: 10px; /* Rounds the corners */
   color: #fff; /* Darker text color for headings */
   text-decoration: none;
   font-size: 16px;
@@ -50,15 +54,16 @@
 }
 
 .nav-list a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+  background-color: #7678ed; /* Light hover effect */
   color: #333; /* Keep text color consistent */
   border-radius: 4px;
 }
 
 /* Dropdown Menu Styles */
+/* Dropdown Menu Styles */
 .dropdown-menu {
   position: absolute;
-  top: 100%;
+  top: 50px; /* Add space between the dropdown and the header */
   left: 0;
   background-color: #7678ed; /* Match header background color */
   list-style: none;
@@ -75,7 +80,7 @@
 }
 
 .dropdown-menu a {
-  color: #333; /* Darker text color for dropdown items */
+  color: #fff; /* Darker text color for dropdown items */
   text-decoration: none;
   display: block;
   padding: 8px 12px;
@@ -86,4 +91,47 @@
   background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
   color: #333; /* Keep text color consistent */
   border-radius: 4px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .hamburger {
+    display: block; /* Show hamburger icon on smaller screens */
+  }
+
+  .nav {
+    display: none; /* Hide the menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    width: 100%;
+    background-color: #3d348b; /* Match header background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .nav.active {
+    display: flex; /* Show the menu when active */
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-list a {
+    border: none; /* Remove border for mobile */
+    margin-top: 0; /* Reset margin */
+  }
+
+  .dropdown-menu {
+    position: static; /* Make dropdown menu inline for mobile */
+    background-color: transparent;
+    box-shadow: none;
+  }
 }
