@@ -1,26 +1,20 @@
 import React from "react";
-import Header from "./components/Header"; // Import the Header component
-import HeroSection from "./components/HeroSection"; // Import the HeroSection component
-import FeaturesSection from "./components/FeaturesSection"; // Import the FeaturesSection component
-import Footer from "./components/Footer"; // Import the Footer component
-import "./App.css"; // Import global styles
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HeroSection from "./HeroSection";
+import AboutMe from "./AboutMe";
+import Projects from "./Projects"; // Import the Projects component
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      {/* Header */}
-      <Header />
-
-      {/* Hero Section */}
-      <HeroSection />
-
-      {/* Features Section */}
-      <FeaturesSection />
-
-      {/* Footer */}
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HeroSection />} />
+        <Route path="/about" element={<AboutMe />} />
+        <Route path="/projects" element={<Projects />} />{" "}
+        {/* Add Projects route */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
