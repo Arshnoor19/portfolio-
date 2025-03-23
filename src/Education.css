@@ -1,7 +1,7 @@
-/* Projects Section */
-.projects-section {
+/* Experience Section */
+.experience-section {
   position: relative;
-  background-image: url("glaxy-background.png");
+  background-image: url("./back-image.png"); /* Adjust path */
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Fix the background image */
@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: #fff; /* Ensure text is white */
   text-align: center;
   padding: 20px;
   overflow: hidden;
@@ -17,94 +17,87 @@
 }
 
 /* Background Shadow Overlay */
-.projects-section::before {
+.experience-section::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 1;
+  background: rgba(0, 0, 0, 0.75); /* Dark overlay */
+  z-index: 1; /* Ensure it's above the background image */
 }
 
-.projects-content {
-  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
-  border-radius: 10px;
+.experience-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  border-radius: 10px;
+  max-width: 800px;
   padding: 20px;
 }
 
-.projects-content h1 {
+.experience-content h1 {
   font-size: 48px;
   margin-bottom: 40px;
   font-family: "Inter", sans-serif; /* Apply Inter font to the heading */
   font-weight: 700; /* Bold weight for the heading */
+  color: #fff; /* Ensure heading is white */
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+/* Timeline Layout */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 20px; /* Add padding to align content with the line */
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0; /* Align the line to the left */
+  width: 2px;
+  height: 100%;
+  background: #fff;
+  /* Remove transform: translateX(-50%) */
+}
+
+.timeline-item {
+  display: flex;
   margin-bottom: 40px;
+  position: relative;
 }
 
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -6px; /* Adjust to align with the left line */
+  width: 12px;
+  height: 12px;
+  background: #ffc6ca;
+  border-radius: 50%;
+  z-index: 2;
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.project-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.project-card h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  font-family: "Inter", sans-serif; /* Apply Inter font to the heading */
-  font-weight: 600; /* Semi-bold weight for the heading */
-}
-
-.project-card p {
-  font-size: 16px;
-  margin-bottom: 15px;
-  font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the paragraph */
-  font-weight: 400; /* Regular weight for the paragraph */
-  line-height: 1.6;
-}
-
-.project-link {
-  display: inline-block;
-  background-color: transparent;
-  color: #f9e6e4;
-  padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 5px;
-  font-size: 16px;
+.timeline-date {
+  flex: 1;
+  margin-top: 23px;
+  text-align: right;
+  padding-right: 30px;
+  font-size: 18px;
   font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-}
-
-.project-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  border-color: #fff;
 }
 
+.timeline-content {
+  flex: 2;
+  text-align: left;
+  padding-left: 30px;
+}
+/* CTA Button */
 .cta-button {
   font-family: "Open Sans", sans-serif; /* Apply Open Sans font to the button */
   background-color: transparent; /* Make the button transparent */

@@ -31,6 +31,8 @@
 .about-content {
   position: relative;
   z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+  border-radius: 10px;
   max-width: 800px;
   padding: 20px;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for routing (if needed)
-import profilePic from "./Profile-Pic.png"; // Adjust the path to your image
 import "./AboutMe.css";
 
 const AboutMe = () => {
@@ -10,13 +9,7 @@ const AboutMe = () => {
     <section className="about-section">
       <div className="about-content">
         <h1>About Me</h1>
-        <div className="profile-image-container">
-          <img
-            src={profilePic}
-            alt="Arshnoor Singh"
-            className="profile-image"
-          />
-        </div>
+        <div className="profile-image-container"></div>
         <p>
           Hi, I'm Arshnoor Singh, a passionate and competent coder with a strong
           background in software development. I specialize in creating

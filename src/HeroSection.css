@@ -33,6 +33,21 @@
   z-index: 2;
 }
 
+/* Profile Picture and Name Container */
+.name-pic-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* Space between profile picture and name */
+}
+
+.name-pic-container .profile-pic {
+  width: 100px; /* Adjust the size of the profile picture */
+  height: 100px; /* Adjust the size of the profile picture */
+  border-radius: 50%; /* Make the profile picture circular */
+  border: 3px solid #fff; /* Optional: Add a border around the picture */
+}
+
 .hero-content h1 {
   font-size: 48px;
   margin-bottom: 20px;

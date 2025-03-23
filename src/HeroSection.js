@@ -1,28 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import profilePic from "./Profile-Pic.png"; // Adjust the path to your PNG file
 import "./HeroSection.css";
 import "./ProfileBox.css";
 
 const HeroSection = () => {
-  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (isLoading) {
-    return <div className="loading-screen">Loading...</div>;
-  }
 
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <h1>ARSHNOOR SINGH</h1>
+        <div className="name-pic-container">
+          <img src={profilePic} alt="Arshnoor Singh" className="profile-pic" />
+          <h1>ARSHNOOR SINGH</h1>
+        </div>
         <p>A Competent coder at your Service</p>
 
         <button
@@ -37,10 +28,24 @@ const HeroSection = () => {
         >
           Projects
         </button>
-
-        <button className="cta-button">Experience</button>
-        <button className="cta-button">Education</button>
-        <button className="cta-button">Contact</button>
+        <button
+          className="cta-button"
+          onClick={() => navigate("/experience")} // Navigate to /experience
+        >
+          Experience
+        </button>
+        <button
+          className="cta-button"
+          onClick={() => navigate("/education")} // Navigate to /education
+        >
+          Education
+        </button>
+        <button
+          className="cta-button"
+          onClick={() => navigate("/contact")} // Navigate to /contact
+        >
+          Contact
+        </button>
       </div>
     </section>
   );
