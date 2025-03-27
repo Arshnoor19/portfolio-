@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import profilePic from "./Profile-Pic.png"; // Adjust the path to your PNG file
+import profilePic from "./ask-gif.gif"; // Adjust the path to your PNG file
 import "./HeroSection.css";
 import "./ProfileBox.css";
 
